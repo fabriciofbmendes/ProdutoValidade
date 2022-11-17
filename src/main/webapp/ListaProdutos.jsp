@@ -43,6 +43,7 @@
 					<td><%=p.getEstoque().getProduto().getNome()%></td>
 					<td><%=valor%>	</td>
 					<td><%=p.getEstoque().getDataValidade()%></td>
+					<td>teste</td>
 				</tr>
 				<%
 				}
