@@ -31,6 +31,8 @@
 					<th>Nome</th>
 					<th>Preço</th>
 					<th>Data de Validade</th>
+					<th>Quantidade Disponível</th>
+					<th>Produto Ativo?</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -43,7 +45,8 @@
 					<td><%=p.getEstoque().getProduto().getNome()%></td>
 					<td><%=valor%>	</td>
 					<td><%=p.getEstoque().getDataValidade()%></td>
-					<td>teste</td>
+					<td><%=p.getEstoque().getQuantidade() %></td>
+					<td><%=p.getEstoque().isAtivo() %></td>
 				</tr>
 				<%
 				}
