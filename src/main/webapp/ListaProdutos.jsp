@@ -19,9 +19,16 @@
 <body>
 
 	<%
+	EstoqueDao ed = new EstoqueDao();
+	List<Estoque> estoques = ed.findAll(Estoque.class);
 	PromocaoDao pd = new PromocaoDao();
 	double valor = 0;
 	List<Promocao> promo = pd.findAll(Promocao.class);
+
+	estoques = ed.findAll(Estoque.class);
+	for(Estoque e : estoques) {
+		pd.CadastraPromocao(e,pd);
+	}
 	%>
 	<div class="container">
 		<a class="btn btn-primary" href="formcurso.jsp">Novo Curso</a>
