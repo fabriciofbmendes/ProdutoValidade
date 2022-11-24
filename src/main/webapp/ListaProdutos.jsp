@@ -14,7 +14,9 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles.css">
+<title>Validador de Produtos</title>
 </head>
 <body>
 
@@ -31,16 +33,14 @@
 	}
 	%>
 	<div class="container">
-		<a class="btn btn-primary" href="formcurso.jsp">Novo Curso</a>
 		<table class="table table-bordered">
-			<thead>
+			<thead class="table-dark">
 				<tr>
 					<th>Nome</th>
 					<th>Preço</th>
 					<th>Data de Validade</th>
 					<th>Quantidade Disponível</th>
 					<th>Produto Ativo?</th>
-					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,18 +48,23 @@
 				for (Promocao p : promo) {
 					valor = p.getEstoque().getProduto().getValor() * (1 - p.getProcentagem());	
 				%>
-				<tr>
-					<td><%=p.getEstoque().getProduto().getNome()%></td>
-					<td><%=valor%>	</td>
-					<td><%=p.getEstoque().getDataValidade()%></td>
-					<td><%=p.getEstoque().getQuantidade() %></td>
-					<td><%=p.getEstoque().isAtivo() %></td>
-				</tr>
+				
+					<tr>
+						<td><%=p.getEstoque().getProduto().getNome()%></td>
+						<td><%=valor%>	</td>
+						<td><%=p.getEstoque().getDataValidade()%></td>
+						<td><%=p.getEstoque().getQuantidade() %></td>
+						<td><%=p.getEstoque().isAtivo() %></td>
+					</tr>
 				<%
 				}
 				%>
 			</tbody>
-		</table>
+			</table>
+			<div="envia">
+				<a class="btn" href="Estoque.jsp">Adicionar Produto</a>
+			</div>
+		
 	</div>
 
 </body>

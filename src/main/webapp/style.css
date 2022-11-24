@@ -1,0 +1,35 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+table{
+	background-color:darkgray;
+	border: 0px solid transparent !important;
+    border-radius: 0px 0px 26px 26px;
+    max-width: 60rem;
+    text-align:center;
+    margin:0 auto;
+    width:80%;
+}
+
+tr:ntn-child(even){
+	background-color:lightgray;
+}
+.container{
+	align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+tbody{
+	background: linear-gradient(45deg, crimson, black);
+    color: white;
+}
+
+td{
+	width:20%;
+}
+
