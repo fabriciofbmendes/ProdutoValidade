@@ -17,10 +17,34 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styles.css">
 <title>Validador de Produtos</title>
+<nav class="navbar navbar-expand-lg bg-light menu">
+    <div class="container-fluid">
+      <a class="navbar-brand">Produtos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inserir Produtos no Estoque</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vizualizar Preços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Verifica Vencimento</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </head>
 <body>
-
-	<%
+<body>
+<%
 	EstoqueDao ed = new EstoqueDao();
 	List<Estoque> estoques = ed.findAll(Estoque.class);
 	PromocaoDao pd = new PromocaoDao();
@@ -32,23 +56,24 @@
 		pd.CadastraPromocao(e,pd);
 	}
 	%>
-	<div class="container">
-		<table class="table table-bordered">
-			<thead class="table-dark">
-				<tr>
-					<th>Nome</th>
-					<th>Preço</th>
-					<th>Data de Validade</th>
-					<th>Quantidade Disponível</th>
-					<th>Produto Ativo?</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%
+<div class="corpo">
+    <div class="container">
+        <table class="table table-bordered table-hover table-responsive table-borderless">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Data de Validade</th>
+                    <th>Quantidade Disponível</th>
+                    <th>Produto Ativo</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<%
 				for (Promocao p : promo) {
 					valor = p.getEstoque().getProduto().getValor() * (1 - p.getProcentagem());	
 				%>
-				
+                 
 					<tr>
 						<td><%=p.getEstoque().getProduto().getNome()%></td>
 						<td><%=valor%>	</td>
@@ -59,13 +84,12 @@
 				<%
 				}
 				%>
-			</tbody>
-			</table>
-			<div="envia">
-				<a class="btn" href="Estoque.jsp">Adicionar Produto</a>
-			</div>
-		
-	</div>
-
+            </tbody>
+        </table>
+            <div="envia">
+                <a class="btn" href="Estoque.jsp">Adicionar Produto</a>
+            </div>
+    </div>   
+</div> 
 </body>
 </html>
