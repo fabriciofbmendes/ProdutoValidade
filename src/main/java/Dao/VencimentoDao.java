@@ -2,6 +2,7 @@ package Dao;
 
 import org.joda.time.*;
 import Models.Estoque;
+import Models.Qualidade;
 import Models.Vencimento;
 
 public class VencimentoDao extends Dao<Vencimento>{
@@ -12,7 +13,7 @@ public class VencimentoDao extends Dao<Vencimento>{
 		int dias = Days.daysBetween(dataAtual,dataValidade).getDays();
 		if( dias < 0)
 		{
-			estoque.setAtivo(false);
+			estoque.setQualidade(Qualidade.Vencido);
 		}
 		return estoque;
 	}

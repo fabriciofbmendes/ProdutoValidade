@@ -20,15 +20,6 @@ public class Produto {
 	@Column(length = 50)
 	private String nome;
 	
-	@Enumerated(EnumType.STRING)
-	private Qualidade qualidade;
-	
-	public Qualidade getQualidade() {
-		return qualidade;
-	}
-	public void setQualidade(Qualidade qualidade) {
-		this.qualidade = qualidade;
-	}
 	@Column(length = 200)
 	private String descricao;
 	

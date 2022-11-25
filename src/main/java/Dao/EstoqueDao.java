@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import Models.Estoque;
 import Models.Produto;
+import Models.Qualidade;
 
 public class EstoqueDao extends Dao<Estoque>{
 	Scanner input = new Scanner(System.in);
@@ -26,7 +27,7 @@ public class EstoqueDao extends Dao<Estoque>{
 		
 		System.out.println("Entre com a Quantidade de produtos do lote");
 		estoque.setQuantidade(input.nextInt());
-		estoque.setAtivo(true);
+		estoque.setQualidade(Qualidade.DentroDaValidade);
 		estoque.setDataValidade(InserirValidade());
 		
 		return estoque;

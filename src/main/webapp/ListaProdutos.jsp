@@ -1,3 +1,4 @@
+<%@page import="Models.Qualidade"%>
 <%@page import="Models.Promocao"%>
 <%@page import="Dao.PromocaoDao"%>
 <%@page import="Models.Estoque"%>
@@ -31,7 +32,8 @@
 	}
 	%>
 	<div class="container">
-		<a class="btn btn-primary" href="formcurso.jsp">Novo Curso</a>
+		<a class="btn btn-primary" href="AdicionaProduto.jsp">Novo Produto</a>
+		<a class="btn btn-primary" href="Estoque.jsp">Novo Lote</a>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -39,7 +41,7 @@
 					<th>Preço</th>
 					<th>Data de Validade</th>
 					<th>Quantidade Disponível</th>
-					<th>Produto Ativo?</th>
+					<th>Qualidade do Produto</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -53,11 +55,18 @@
 					<td><%=valor%>	</td>
 					<td><%=p.getEstoque().getDataValidade()%></td>
 					<td><%=p.getEstoque().getQuantidade() %></td>
-					<td><%=p.getEstoque().isAtivo() %></td>
+					<td>
+					<% if(p.getEstoque().getQualidade() == Qualidade.DentroDaValidade)
+					{
+						%>
+							<p>Dentro da Validade </p>
+					<%
+					}
+					%>
+					
+					<%} %>
+					</td>
 				</tr>
-				<%
-				}
-				%>
 			</tbody>
 		</table>
 	</div>

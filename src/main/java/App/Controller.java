@@ -44,7 +44,6 @@ public class Controller {
 			switch(entrada)
 			{
 				case 1:
-					produto = pd.CadastrarProduto();
 					pd.save(produto);
 					break;
 				case 2:

@@ -13,6 +13,7 @@ import Dao.ProdutoDao;
 import Dao.PromocaoDao;
 import Models.Estoque;
 import Models.Produto;
+import Models.Qualidade;
 
 @WebServlet({ "/ServletEstoque", "/controllerEstoque" })
 public class ServletEstoque extends HttpServlet{
@@ -43,7 +44,7 @@ public class ServletEstoque extends HttpServlet{
 			Estoque novoEstoque = new Estoque();
 			novoEstoque.setProduto(pd.findById(Produto.class, Long.parseLong(request.getParameter("produto"))).get());
 			novoEstoque.setDataValidade(LocalDate.parse(request.getParameter("dataValidade")));
-			novoEstoque.setAtivo(true);
+			novoEstoque.setQualidade(Qualidade.DentroDaValidade);
 			novoEstoque.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 			novoEstoque.setNota(nfd.GerarNotaFiscal(nfd));
 			dao.save(novoEstoque);

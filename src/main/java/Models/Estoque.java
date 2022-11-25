@@ -4,13 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.*;
-import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.ManyToAny;
 @Entity
@@ -25,13 +19,14 @@ public class Estoque {
 	@ManyToOne
 	private Produto produto;
 	
-	private boolean Ativo;
-	
-	public boolean isAtivo() {
-		return Ativo;
+	@Enumerated(EnumType.STRING)
+	private Qualidade qualidade;
+
+	public Qualidade getQualidade() {
+		return qualidade;
 	}
-	public void setAtivo(boolean ativo) {
-		Ativo = ativo;
+	public void setQualidade(Qualidade qualidade) {
+		this.qualidade = qualidade;
 	}
 	private int quantidade;
 	

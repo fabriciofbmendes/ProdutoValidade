@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_relatorio", discriminatorType = DiscriminatorType.STRING)
-public abstract class Relatorio {
+public abstract class Relatorio implements Comparable<Relatorio>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
