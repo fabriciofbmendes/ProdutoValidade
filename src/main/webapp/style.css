@@ -1,0 +1,81 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+table{
+	background: linear-gradient(45deg, #c87f0a, black);
+	border: 0px solid transparent !important;
+    border-radius: 0px 0px 26px 26px;
+    max-width: 60rem;
+    text-align:center;
+    margin:0 auto;
+    width:80%;
+}
+
+tr:ntn-child(even){
+	background-color:lightgray;
+}
+.container{
+	align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+tbody{
+    color: white;
+    border-radius: 0 0 26px 26px !important;
+    
+}
+
+body{
+    overflow: hidden;
+}
+
+td{
+	width:20%;
+}
+
+thead{
+    border: 1px solid rgb(90, 90, 90) ;
+}
+  
+.menu{
+    display: block;
+    color: black !important;
+    background-color: gray !important;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+a{
+    padding: 10px;
+}
+
+.nav-link{
+    letter-spacing: 2px;
+}
+
+.navbar-nav{
+    gap: 2rem;
+}
+
+a:hover{
+    background-color: darkgray;
+    height: 100%;
+    transform: scale(1.1);
+}
+
+
+.corpo{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/Produtos.webp);
+}
