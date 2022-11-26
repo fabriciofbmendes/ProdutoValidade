@@ -19,8 +19,12 @@ public class ServletProdutos extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		response.sendRedirect("ListaProdutos.jsp");
+		ProdutoDao dao = new ProdutoDao();
 		
+		long produtoid = Long.parseLong(request.getParameter("id"));
+		Produto produto = dao.findById(Produto.class, produtoid).get();
+		dao.delete(produto);
+		response.sendRedirect("Produtos.jsp");
 		}
 
 	/**
@@ -30,11 +34,22 @@ public class ServletProdutos extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ProdutoDao pd = new ProdutoDao();
-		Produto p = new Produto();
-		p.setNome(request.getParameter("nome"));
-		p.setValor(Double.parseDouble(request.getParameter("valor")));
-		p.setDescricao(request.getParameter(request.getParameter("descricao")));
-		pd.save(p);
-		response.sendRedirect("ListaProdutos.jsp");
+		if (request.getParameter("produtoid").equals("")) {
+			Produto p = new Produto();
+			p.setNome(request.getParameter("nome"));
+			p.setValor(Double.parseDouble(request.getParameter("valor")));
+			p.setDescricao(request.getParameter("descricao"));
+			pd.save(p);
+		}
+		else {
+			long produtoid = Long.parseLong(request.getParameter("produtoid"));
+			Produto p = pd.findById(Produto.class, produtoid).get();
+			p.setNome(request.getParameter("nome"));
+			p.setValor(Double.parseDouble(request.getParameter("valor")));
+			p.setDescricao(request.getParameter("descricao"));
+			pd.update(p);
+		}
+		response.sendRedirect("Produtos.jsp");
+
 }
 	}
