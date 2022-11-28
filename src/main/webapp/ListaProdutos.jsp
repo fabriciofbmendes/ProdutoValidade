@@ -87,9 +87,17 @@
 					<%
 					}
 					%>
-					
+					<td><a class="btn btn-secondary btn-sm"
+						href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a>
+						
+						<a class="btn btn-danger btn-sm"
+						href="<%= request.getContextPath()%>/controllerEstoque?id=<%=p.getEstoque().getId()%>">
+						Excluir</a>
+					<td>
+					</td>
 					<%} %>
 					</td>
+					
 				</tr>
 			</tbody>
 		</table>

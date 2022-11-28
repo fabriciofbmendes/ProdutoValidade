@@ -33,7 +33,7 @@ public class Estoque {
 	@Column(name = "Data_Validade", columnDefinition = "DATE")
 	private LocalDate dataValidade;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	private NotaFiscal nota;
 	
 	

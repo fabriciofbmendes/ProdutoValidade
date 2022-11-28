@@ -26,21 +26,23 @@ public class ServletEstoque extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-//		EstoqueDao dao = new EstoqueDao();
-//		
-//		long cursoid = Long.parseLong(request.getParameter("id"));
-//		Curso delCurso = dao.findById(Curso.class, cursoid).get();
-//		
-//		dao.delete(delCurso);
-		response.sendRedirect("Estoque.jsp");
+		EstoqueDao dao = new EstoqueDao();
+	
+		long estoqueid = Long.parseLong(request.getParameter("id"));
+		Estoque delEstoque = dao.findById(Estoque.class, estoqueid).get();
+		
+		dao.delete(delEstoque);
+		response.sendRedirect("ListaProdutos.jsp");
 		
 		}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		NotaFiscalDao nfd = new NotaFiscalDao();
 		EstoqueDao dao = new EstoqueDao();
+		NotaFiscalDao nfd = new NotaFiscalDao();
 		ProdutoDao pd = new ProdutoDao();
+		if(request.getParameter("estoqueid").equals(""))
+		{
 			Estoque novoEstoque = new Estoque();
 			novoEstoque.setProduto(pd.findById(Produto.class, Long.parseLong(request.getParameter("produto"))).get());
 			novoEstoque.setDataValidade(LocalDate.parse(request.getParameter("dataValidade")));
@@ -48,6 +50,15 @@ public class ServletEstoque extends HttpServlet{
 			novoEstoque.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 			novoEstoque.setNota(nfd.GerarNotaFiscal(nfd));
 			dao.save(novoEstoque);
+		}
+		else {
+			long estoqueid = Long.parseLong(request.getParameter("estoqueid"));
+			Estoque e = dao.findById(Estoque.class, estoqueid).get();
+			e.setProduto(pd.findById(Produto.class, Long.parseLong(request.getParameter("produto"))).get());
+			e.setDataValidade(LocalDate.parse(request.getParameter("dataValidade")));
+			e.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+			dao.update(e);
+		}
 		response.sendRedirect("ListaProdutos.jsp");
 }
 	}
