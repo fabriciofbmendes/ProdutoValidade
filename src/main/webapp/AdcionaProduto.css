@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url(../Produtos/img/produtos.webp);
+}
+
+html{
+    height: 100vh;
+}
+
+.contentadd{
+    height: 75%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background: linear-gradient(45deg, rgba(199, 127, 10, 0.9) , rgba(0, 0, 0,0.6));
+    margin-top: 10%;
+}
+
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem; 
+    align-items: center;
+    justify-content: center;
+    /* align-self: center; */
+    /* align-content: center; */
+    height: 100%;
+    width: 100%;
+}
+
+label{
+    letter-spacing: 2px;
+}
+
+.info{
+    width: 50%;
+    height: 6%;
+    /* border: transparent; */
+    border-color: transparent;
+    border-radius: 8px;
+    background-color: lightgray;
+    cursor: auto;
+    color: black !important;
+    text-align: center;
+}
+
+.menu{
+    position: absolute;
+    width: 100%;
+    padding-left: 7%;
+    transform: scale(1.0);
+    animation: 1s;
+}
+
+.btn{
+    transform: scale(1.0);
+    animation: 1s;
+}
