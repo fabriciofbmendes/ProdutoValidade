@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inserir Produtos no Estoque</a>
+            <a class="nav-link active" aria-current="page" href="Estoque.jsp">Inserir Produtos no Estoque</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Vizualizar Preços</a>
