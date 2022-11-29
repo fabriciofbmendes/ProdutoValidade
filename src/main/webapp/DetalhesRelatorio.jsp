@@ -71,7 +71,9 @@ List<Estoque> estoques = vd.GetDetalhesRelatorio(id);
 				</tr>
 			</tbody>
 		</table>
-
+		<div>
+             <a class="btn" href="RelatorioVencimento.jsp">Voltar</a>
+         </div>
     </div>   
 </div> 
 </body>
