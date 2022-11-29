@@ -2,14 +2,11 @@ table th{
     border: 0px solid transparent;
 }
 
-.btn{
-    margin-top: 25%;
-}
-
 body{
     background-image: url(/Produtos/img/post-blog-relatorios-corporativos.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    gap: 1rem;
 }
 
 html{
@@ -20,4 +17,12 @@ html{
     position: absolute;
     width: 100%;
     padding-left: 7%;
+}
+
+.linha{
+    padding-top: 2rem !important;
+}
+
+form{
+    margin-top: 8rem;
 }

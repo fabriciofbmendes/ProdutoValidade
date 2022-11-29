@@ -15,6 +15,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="Relatorio.css">
 <title>Validador de Produtos</title>
 <nav class="navbar navbar-expand-lg bg-light menu">
     <div class="container-fluid">
@@ -42,38 +43,37 @@
   </nav>
 </head>
 <body>
-<%
+    <%
 	VencimentoDao vd = new VencimentoDao();
 	List<Vencimento> vencimentos = vd.findAll(Vencimento.class);
 %>
-
-<form action="controllerRelatorio" method="post"> 
-<input type="submit" value="Novo Relatório" />
-</form>
-<table class="table table-bordered table-hover table-responsive table-borderless">
-			<thead class="table-dark">
-                <tr>
-                    <th>Data</th>
-                    <th>Prejuizo</th>
-                    <th>Quantidade</th>
-                    <th>Detalhes</th>>
-                </tr>
-            </thead>
-	<tbody>
-	
-		<% 
-		for(Vencimento v : vencimentos)
-		{
+<div class="container">
+	<form action="controllerRelatorio" method="post"> 
+	<input class="btn topo" type="submit" value="Novo Relatório" />
+	</form>
+	<table class="table table-bordered table-hover table-responsive table-borderless">
+				<thead class="table-dark">
+	                <tr>
+	                    <th>Data</th>
+	                    <th>Prejuizo</th>
+	                    <th>Quantidade</th>
+	                    <th>Detalhes</th>>
+	                </tr>
+	            </thead>
+		<tbody class="result">
+            <% 
+			for(Vencimento v : vencimentos)
+			{
+				%>
+				<tr>
+					<td><%=v.getData().getMonth().toString()%></td>
+					<td><%=v.getValorPrejuizo()%></td>
+					<td><%=v.getQuantidade()%></td>
+					<td><a class="btn btn-secondary btn-sm" href="DetalhesRelatorio.jsp?id=<%=v.getId()%>">Detalhes</a>			<%
+			}
 			%>
-			<tr>
-				<td><%=v.getData().getMonth().toString()%></td>
-				<td><%=v.getValorPrejuizo()%></td>
-				<td><%=v.getQuantidade()%></td>
-				<td><a class="btn btn-secondary btn-sm" href="DetalhesRelatorio.jsp?id=<%=v.getId()%>">Detalhes</a>			<%
-		}
-		%>
-	</tr>
-	</tbody>
-</table>
+		</tbody>
+	</table>
+</div>
 </body>
 </html>

@@ -11,7 +11,34 @@
 			rel="stylesheet"
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 			crossorigin="anonymous">
-		<title>Insert title here</title>
+			<link rel="stylesheet" href="style.css">
+        	<link rel="stylesheet" href="styles.css">
+        	<link rel="stylesheet" href="AdcionaProduto.css">
+		<title>Editar Produto</title>
+		<nav class="navbar navbar-expand-lg bg-light menu">
+            <div class="container-fluid">
+              <a class="navbar-brand">Produtos</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inserir Produtos no Estoque</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Vizualizar Preços</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Verifica Vencimento</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
 	</head>
 	<body>
 	<%
@@ -19,17 +46,19 @@
 	ProdutoDao dao = new ProdutoDao();
 	Produto produto = dao.findById(Produto.class, produtoid).get();
 	%>
-		<form action="controllerProduto" method="post">
+		<div class="contentadd">
+            <form action="controllerProduto" method="post">
 			<input type="hidden" name="produtoid" value="<%=produtoid %>">
 				<label>Nome do Produto</label>
-				<input type="text" name="nome" value="<%=produto.getNome() %>"/>
+				<input class="info" type="text" name="nome" value="<%=produto.getNome() %>"/>
 				<br/>
 				<label>Valor do Produto</label>
-				<input type="text" name="valor" value="<%=produto.getValor() %>"/>
+				<input class="info" type="text" name="valor" value="<%=produto.getValor() %>"/>
 				<br/>
 				<label>Insira a descrição do produto</label>
-				<input type="text" name="descricao" value="<%=produto.getDescricao()%>"/>				
-				<input type="submit" value="Salvar" />
-		</form>
+				<input class="info" type="text" name="descricao" value="<%=produto.getDescricao()%>"/>				
+				<input class="btn" type="submit" value="Editar Produto" />
+            </form>
+		</div>
 	</body>
 </html>
