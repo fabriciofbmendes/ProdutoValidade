@@ -31,7 +31,7 @@
             <a class="nav-link active" aria-current="page" href="Estoque.jsp">Inserir Produtos no Estoque</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Vizualizar Preços</a>
+            <a class="nav-link" href="ListarProdutos.jsp">Vizualizar Preços</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
