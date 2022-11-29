@@ -1,3 +1,4 @@
+<%@page import="Dao.VencimentoDao"%>
 <%@page import="Models.Qualidade"%>
 <%@page import="Models.Promocao"%>
 <%@page import="Dao.PromocaoDao"%>
@@ -51,10 +52,11 @@
 	PromocaoDao pd = new PromocaoDao();
 	double valor = 0;
 	List<Promocao> promo = pd.findAll(Promocao.class);
-
+	VencimentoDao vd = new VencimentoDao();
 	estoques = ed.findAll(Estoque.class);
 	for(Estoque e : estoques) {
 		pd.CadastraPromocao(e,pd);
+		vd.VerificaVencimento(e);
 	}
 	%>
 <div class="corpo">
@@ -85,8 +87,10 @@
 						%>
 							<p>Dentro da Validade </p>
 					<%
-					}
+					} else {
 					%>
+					<p><%=p.getEstoque().getQualidade()%></p>
+					<%} %>
 					<td><a class="btn btn-secondary btn-sm"
 						href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a>
 						

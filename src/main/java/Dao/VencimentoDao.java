@@ -20,6 +20,7 @@ public class VencimentoDao extends Dao<Vencimento>{
 		if( dias < 0)
 		{
 			estoque.setQualidade(Qualidade.Vencido);
+			ed.update(estoque);
 		}
 		return estoque;
 	}

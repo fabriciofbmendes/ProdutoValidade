@@ -14,7 +14,7 @@
 			rel="stylesheet"
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 			crossorigin="anonymous">
-		<title>Insert title here</titlez>
+		<title>Insert title here</title>
 	</head>
 	<body>
 	<%
@@ -27,9 +27,15 @@
 		<form action="controllerEstoque" method="post">
 			<input type="hidden" name="estoqueid" value="<%=estoque.getId()%>">
 				<label>Selecione o Produto</label>
-				<select name="produto">
+				<select name="produto" defaultValue="<%=estoque.getProduto().getId()%>">
 					<%for(Produto p : produtos)
 					{
+						if(p.getId()==estoque.getProduto().getId())
+						{
+						%>
+						<option value="<%=p.getId()%>" selected="selected"><%=p.getNome()%></option>
+						<%}
+						else
 						%>
 						<option value="<%=p.getId()%>"><%=p.getNome()%></option>
 						<%
