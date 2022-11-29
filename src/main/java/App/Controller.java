@@ -71,7 +71,7 @@ public class Controller {
 				case 6:
 					estoques = ed.findAll(Estoque.class);
 					for(Estoque e : estoques) {
-						estoque = vd.VerificaVencimento(e, ed);
+						estoque = vd.VerificaVencimento(e);
 						ed.update(estoque);
 					}
 					break;

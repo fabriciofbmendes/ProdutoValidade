@@ -1,5 +1,7 @@
 package Models;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -10,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -19,26 +22,45 @@ public abstract class Relatorio implements Comparable<Relatorio>{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@ManyToOne
-	private Estoque estoque;
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	@ManyToMany
+	private List<Estoque> estoques;
 	
+	@Column(name="Quantidade_Produtos")
+	private int quantidade;
+	
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
 	@Column(name = "Data_Emissao", columnDefinition = "DATE")
-	private Date data;
+	private LocalDate data;
 	
 	
-	public Estoque getEstoque() {
-		return estoque;
+	public List<Estoque> getEstoque() {
+		return estoques;
 	}
 
-	public void setEstoque(Estoque estoque) {
-		this.estoque = estoque;
+	public void setEstoque(List<Estoque> estoque) {
+		this.estoques = estoque;
 	}
 
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 }

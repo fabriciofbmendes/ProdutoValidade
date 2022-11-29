@@ -2,6 +2,7 @@ package Models;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.*;
@@ -35,7 +36,6 @@ public class Estoque {
 	
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	private NotaFiscal nota;
-	
 	
 	public Produto getProduto() {
 		return produto;
