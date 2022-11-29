@@ -69,6 +69,7 @@
 				List<Desconto> descontos = dd.findAll(Desconto.class);
 				List<Vencimento> vencimentos = vd.findAll(Vencimento.class);
 				%>
+			<tbody>
 				<tr>
 				
 				</tr>
