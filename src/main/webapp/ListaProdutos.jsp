@@ -62,7 +62,8 @@
 	%>
 <div class="corpo">
     <div class="container">
-        <table class="table table-bordered table-hover table-responsive table-borderless">
+    	<div class="table-wrapper-scroll-y my-custom-scrollbar">
+         <table class="table table-bordered table-hover table-responsive table-borderless table-wrapper-scroll-y mb-0">
             <thead class="table-dark">
                 <tr>
                     <th>Nome</th>
@@ -112,6 +113,7 @@
             <div="envia">
                 <a class="btn" href="Estoque.jsp">Adicionar Produto</a>
             </div>
+       </div>
     </div>   
 </div> 
 </body>
