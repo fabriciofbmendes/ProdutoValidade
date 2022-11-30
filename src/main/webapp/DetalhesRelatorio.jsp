@@ -15,6 +15,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="Relatorio.css">
 <title>Validador de Produtos</title>
 <nav class="navbar navbar-expand-lg bg-light menu">
     <div class="container-fluid">
@@ -47,9 +48,9 @@ long id = Long.parseLong(request.getParameter("id"));
 VencimentoDao vd = new VencimentoDao();
 List<Estoque> estoques = vd.GetDetalhesRelatorio(id);
 %>
-<div class="corpo">
-    <div class="container">
-        <table class="table table-bordered table-hover table-responsive table-borderless">
+
+    <div class="container ">
+        <table class=" relatorio table table-bordered table-hover table-responsive table-borderless">
             <thead class="table-dark">
                 <tr>
                     <th>Produto</th>
@@ -75,6 +76,5 @@ List<Estoque> estoques = vd.GetDetalhesRelatorio(id);
              <a class="btn" href="RelatorioVencimento.jsp">Voltar</a>
          </div>
     </div>   
-</div> 
 </body>
 </html>

@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="Relatorio.css">
-<title>Validador de Produtos</title>
+<title>Relatorio</title>
 <nav class="navbar navbar-expand-lg bg-light menu">
     <div class="container-fluid">
       <a class="navbar-brand">Produtos</a>

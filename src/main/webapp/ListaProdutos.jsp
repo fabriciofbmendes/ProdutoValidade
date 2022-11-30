@@ -18,35 +18,36 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styles.css">
-<title>Validador de Produtos</title>
-<nav class="navbar navbar-expand-lg bg-light menu">
-    <div class="container-fluid">
-      <a class="navbar-brand">Produtos</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Estoque.jsp">Inserir Produtos no Estoque</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ListarProdutos.jsp">Vizualizar Preços</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Verifica Vencimento</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<title>Lista de Produtos</title>
+<div class="divnav">
+	<nav class="navbar navbar-expand-lg bg-light menu">
+	    <div class="container-fluid">
+	      <a class="navbar-brand">Produtos</a>
+	      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	      <div class="collapse navbar-collapse" id="navbarNav">
+	        <ul class="navbar-nav">
+	          <li class="nav-item">
+	            <a class="nav-link active" aria-current="page" href="Estoque.jsp">Inserir Produtos no Estoque</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="ListarProdutos.jsp">Vizualizar Preços</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="#">Verifica Vencimento</a>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	</nav>
+</div>
 </head>
 <body>
-<body>
-<%
+<%	
 	EstoqueDao ed = new EstoqueDao();
 	List<Estoque> estoques = ed.findAll(Estoque.class);
 	PromocaoDao pd = new PromocaoDao();
@@ -69,6 +70,9 @@
                     <th>Data de Validade</th>
                     <th>Quantidade Disponível</th>
                     <th>Produto Ativo</th>
+                    <th></th>
+                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -93,11 +97,11 @@
 					<%} %>
 					<td><a class="btn btn-secondary btn-sm"
 						href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a>
-						
+					</td>
+					<td>	
 						<a class="btn btn-danger btn-sm"
 						href="<%= request.getContextPath()%>/controllerEstoque?id=<%=p.getEstoque().getId()%>">
 						Excluir</a>
-					<td>
 					</td>
 					<%} %>
 					</td>

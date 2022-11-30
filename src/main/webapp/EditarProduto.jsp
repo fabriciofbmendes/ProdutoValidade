@@ -56,7 +56,8 @@
 				<input class="info" type="text" name="valor" value="<%=produto.getValor() %>"/>
 				<br/>
 				<label>Insira a descrição do produto</label>
-				<input class="info" type="text" name="descricao" value="<%=produto.getDescricao()%>"/>				
+				<input class="info" type="text" name="descricao" value="<%=produto.getDescricao()%>"/>	
+				<br/>			
 				<input class="btn" type="submit" value="Editar Produto" />
             </form>
 		</div>

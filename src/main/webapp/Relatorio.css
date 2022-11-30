@@ -3,10 +3,14 @@ table th{
 }
 
 body{
-    background-image: url(/img/post-blog-relatorios-corporativos.jpg);
+    background-image: url(img/post-blog-relatorios-corporativos.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     gap: 1rem;
+}
+
+.relatorio{
+	margin-top:10rem;
 }
 
 html{

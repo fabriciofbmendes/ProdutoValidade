@@ -9,7 +9,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-image: url(../Produtos/img/produtos.webp);
+    background-image: url(./img/Produtos.webp);
 }
 
 html{
@@ -23,7 +23,7 @@ html{
     flex-direction: column;
     width: 35%;
     background: linear-gradient(45deg, rgba(199, 127, 10, 0.9) , rgba(0, 0, 0,0.6));
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 

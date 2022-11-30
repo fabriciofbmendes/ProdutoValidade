@@ -19,7 +19,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="styles.css">
-<title>Validador de Produtos</title>
+<title>Produtos</title>
 <nav class="navbar navbar-expand-lg bg-light menu">
     <div class="container-fluid">
       <a class="navbar-brand">Produtos</a>
@@ -60,6 +60,8 @@ ProdutoDao pd = new ProdutoDao();
                     <th>Nome</th>
                     <th>Valor Original</th>
                     <th>Descrição</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -72,11 +74,11 @@ ProdutoDao pd = new ProdutoDao();
 					<td><%=p.getDescricao()%></td>
 					<td><a class="btn btn-secondary btn-sm"
 						href="EditarProduto.jsp?id=<%=p.getId()%>">Editar</a>
-						
+					</td>
+					<td>
 						<a class="btn btn-danger btn-sm"
 						href="<%= request.getContextPath()%>/controllerProduto?id=<%=p.getId()%>">
 						Excluir</a>
-					<td>
 					</td>
 				</tr>
 				<%} %>
