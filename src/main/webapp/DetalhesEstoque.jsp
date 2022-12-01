@@ -18,7 +18,7 @@
 			crossorigin="anonymous">
 		<link rel="stylesheet" href="Estoque.css">
 		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="styles.css	">
+		<link rel="stylesheet" href="styles.css">
 		<title>Estoque</title>
 		<nav class="navbar navbar-expand-lg bg-light menu">
 	    <div class="container-fluid">
