@@ -32,6 +32,11 @@ html{
     padding: 5%;
 }
 
+.corpo-detalhe-content{
+	display:flex;
+	flex-direction:row
+}
+
 .corpo-estoque{
     background: linear-gradient(45deg, #c87f0a, black);
     border-radius: 8px;
@@ -56,6 +61,8 @@ form{
     text-decoration: none;
 }
 
+
+
 .input-estoque{
     max-width: 50%;
     text-align: center;
@@ -69,7 +76,7 @@ form{
 
 .btn {
     align-self: center;
-    width: 50%;
+    width: 80%;
     margin-top: 5%;
     border-radius: 8px;
     border-color: transparent;  

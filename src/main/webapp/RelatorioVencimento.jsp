@@ -46,7 +46,7 @@
 %>
 <div class="container">
 	<form action="controllerRelatorio" method="post"> 
-	<input class="btn topo" type="submit" value="Novo Relatório" />
+	<input class="btn " type="submit" value="Novo Relatório" />
 	</form>
 	<table class="table table-bordered table-hover table-responsive table-borderless">
 				<thead class="table-dark">

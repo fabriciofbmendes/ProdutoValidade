@@ -48,22 +48,24 @@
 		Promocao p = pd.findById(Promocao.class, Long.parseLong(request.getParameter("id"))).get();
 		%>
 		<div class="corpo-estoque">
-			<div class="corpo-content">
-						<label>Produto</label>
-						<label><%=p.getEstoque().getProduto().getNome()%></label>
-						<br/>
-						<label>Marca</label>
-						<label><%=p.getEstoque().getProduto().getMarca()%></label>
-						<br/>
-						<label>Descrição</label>
-						<label><%=p.getEstoque().getProduto().getDescricao()%></label>
-						<br/>
-						<label>Valor Original</label>
-						<label><%=p.getEstoque().getProduto().getValor()%></label>
-						<br/>
-						<label>Data de Validade</label>
-						<label><%=p.getEstoque().getDataValidade().toString()%></label>
-						<br/>
+			<div class="corpo-detalhe-content">
+				<table class="table">
+					<thead class="detalhe">
+							<td>Produto</td>
+							<td>Marca</td>
+							<td>Descrição</td>
+							<td>Valor Original</td>
+							<td>Data de Validade</td>
+
+					</thead>
+					<tbody>
+						    <td><%=p.getEstoque().getProduto().getNome()%></td>
+						    <td><%=p.getEstoque().getProduto().getMarca()%></td>
+						    <td><%=p.getEstoque().getProduto().getDescricao()%></td>
+						    <td><%=p.getEstoque().getProduto().getValor()%></td>
+						    <td><%=p.getEstoque().getDataValidade().toString()%></td>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		 <div>
