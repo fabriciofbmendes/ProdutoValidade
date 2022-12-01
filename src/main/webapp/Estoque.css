@@ -14,6 +14,17 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image:url(/Produtos/img/post-blog-relatorios-corporativos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 input[type=number]{
     -moz-appearance: textfield;
 }
@@ -29,6 +40,7 @@ input[type=number]{
     width: 100%;
     position: absolute;
     padding-left: 8rem; 
+    transform: translateY(-23rem);
 }
 
 html{
@@ -123,7 +135,7 @@ option{
     gap: 1rem;
     position: fixed;
     z-index: 1;
-    transform: translate(10%, -50%);   
+    transform: translate(5%, -50%);   
 }
 
 .input{
@@ -142,7 +154,7 @@ option{
 }
 
 .detalhe{
-    margin-right: 10% !important;
+    margin-right: -50% !important;
     z-index: 1;
 }
 
@@ -153,6 +165,5 @@ option{
 .baixo{
     border-radius: 0px 0px 8px 8px;
 }
-
 
 
