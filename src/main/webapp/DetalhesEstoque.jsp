@@ -57,7 +57,7 @@
 				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getMarca()%>" readonly/>
 				<br/>
 				<label>Descricao do Produto</label>
-				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getDescricao()%>" readonly/>
+				<textarea style="max-height:300px;min-height: 40px" class="mx-sm-auto input-estoque" readonly><%=p.getEstoque().getProduto().getDescricao()%> </textarea>
 				<br/>
 				<label>Valor Original</label>
 				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getValor()%>" readonly/>

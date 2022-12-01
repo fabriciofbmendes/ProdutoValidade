@@ -46,7 +46,7 @@
                     <input class="info" type="text" required name="marca"/>
                     <br/>	
                     <label>Valor do Produto</label>
-                    <input class="info" type="number" required name="valor"/>
+                    <input class="info" type="number" required name="valor" step="any"/>
                     <br/>
                     <label>Insira a descrição do produto</label>
                     <textarea class="info" required name="descricao"></textarea>
