@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.joda.time.*;
 
@@ -66,5 +67,15 @@ public List<Promocao> getListaPorId(long id)
 	String sql = "select * from promocao where estoque_id="+id; 
 	List<Promocao> promocoes = em.createNativeQuery(sql, Promocao.class).getResultList();
 	return promocoes;
+}
+
+public void GetPromocaoDelete(Estoque e)
+{
+	TypedQuery<Promocao> query = em.createQuery("SELECT p FROM Promocao p WHERE p.estoque = ?1",Promocao.class);
+	query.setParameter(1, e);
+	Promocao p = query.getSingleResult();
+	em.getTransaction().begin();
+	em.remove(em.contains(p) ? p : em.merge(p));
+	em.getTransaction().commit();
 }
 }

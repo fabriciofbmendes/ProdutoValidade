@@ -22,23 +22,20 @@
 <div class="divnav">
 	<nav class="navbar navbar-expand-lg bg-light menu">
 	    <div class="container-fluid">
-	      <a class="navbar-brand">Produtos</a>
+	      <a href="#" class="navbar-brand">Inicio</a>
 	      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
 	      </button>
 	      <div class="collapse navbar-collapse" id="navbarNav">
 	        <ul class="navbar-nav">
-	          <li class="nav-item">
-	            <a class="nav-link active" aria-current="page" href="Estoque.jsp">Inserir Produtos no Estoque</a>
+	        <li class="nav-item">
+	            <a class="nav-link active" aria-current="page" href="Produtos.jsp">Lista de Produtos</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="ListarProdutos.jsp">Vizualizar Preços</a>
+	            <a class="nav-link active" aria-current="page" href="ListaProdutos.jsp">Estoque</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link" href="#">Verifica Vencimento</a>
+	            <a class="nav-link" href="RelatorioVencimento.jsp">Relatorios</a>
 	          </li>
 	        </ul>
 	      </div>
@@ -111,7 +108,7 @@
 			</tbody>
 		</table>
             <div="envia">
-                <a class="btn" href="Estoque.jsp">Adicionar Produto</a>
+                <a class="btn envia" href="Estoque.jsp">Adicionar Produto</a>
             </div>
        </div>
     </div>   

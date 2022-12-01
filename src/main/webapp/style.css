@@ -67,6 +67,10 @@ a{
     padding: 10px;
 }
 
+.envia{
+	left:30%;
+}
+
 .nav-link{
     letter-spacing: 2px;
 }
@@ -83,10 +87,11 @@ a:hover{
 
 
 .corpo{
-    background-color: gray;
+    background-color: white;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(img/produtos.webp);
+    background-image: url(img/Produtos.webp);
+    background-size:cover;
 }

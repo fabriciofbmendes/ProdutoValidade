@@ -1,6 +1,9 @@
 package servlets;
 import java.io.IOException;
 import java.time.LocalDate;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,25 +18,23 @@ import Dao.ProdutoDao;
 import Dao.PromocaoDao;
 import Models.Estoque;
 import Models.Produto;
+import Models.Promocao;
 import Models.Qualidade;
 
 @WebServlet({ "/ServletEstoque", "/controllerEstoque" })
 public class ServletEstoque extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-
 	public ServletEstoque() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		EstoqueDao dao = new EstoqueDao();
-	
+		PromocaoDao pd = new PromocaoDao();	
+		EstoqueDao ed = new EstoqueDao();
 		long estoqueid = Long.parseLong(request.getParameter("id"));
-		Estoque delEstoque = dao.findById(Estoque.class, estoqueid).get();
-		
-		dao.delete(delEstoque);
+		Estoque estoque = ed.findById(Estoque.class, estoqueid).get();		
+		pd.GetPromocaoDelete(estoque);
 		response.sendRedirect("ListaProdutos.jsp");
 		
 		}

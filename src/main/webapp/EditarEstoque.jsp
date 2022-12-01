@@ -21,29 +21,26 @@
         	<link rel="stylesheet" href="Estoque.css">
 		<title>Editar Estoque</title>
 	<nav class="navbar navbar-expand-lg bg-light menu">
-            <div class="container-fluid">
-              <a class="navbar-brand">Produtos</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inserir Produtos no Estoque</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Vizualizar Preços</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Atualizar Data de Validade do Produto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Verifica Vencimento</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+	    <div class="container-fluid">
+	      <a href="#" class="navbar-brand">Inicio</a>
+	      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	      <div class="collapse navbar-collapse" id="navbarNav">
+	        <ul class="navbar-nav">
+	        <li class="nav-item">
+	            <a class="nav-link active" aria-current="page" href="Produtos.jsp">Lista de Produtos</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link active" aria-current="page" href="ListaProdutos.jsp">Estoque</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="RelatorioVencimento.jsp">Relatorios</a>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	</nav>
 	</head>
 	<body>
 	<%

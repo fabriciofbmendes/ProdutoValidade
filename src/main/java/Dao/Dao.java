@@ -9,7 +9,7 @@ import javax.persistence.EntityTransaction;
 
 public class Dao<T> {
 
-	private EntityManager em = Util.JpaUtil.getEntityManagerFactory().createEntityManager();
+	protected EntityManager em = Util.JpaUtil.getEntityManagerFactory().createEntityManager();
 
 	public void save(T entity) {
 		executeInsideTransaction(em -> em.persist(entity));
