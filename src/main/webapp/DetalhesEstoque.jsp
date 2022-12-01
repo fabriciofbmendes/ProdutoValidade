@@ -47,29 +47,29 @@
 		PromocaoDao pd = new PromocaoDao();
 		Promocao p = pd.findById(Promocao.class, Long.parseLong(request.getParameter("id"))).get();
 		%>
-		<div class="corpo-estoque">
-			<div class="corpo-detalhe-content">
-				<table class="table">
-					<thead class="detalhe">
-							<td>Produto</td>
-							<td>Marca</td>
-							<td>Descrição</td>
-							<td>Valor Original</td>
-							<td>Data de Validade</td>
-
-					</thead>
-					<tbody>
-						    <td><%=p.getEstoque().getProduto().getNome()%></td>
-						    <td><%=p.getEstoque().getProduto().getMarca()%></td>
-						    <td><%=p.getEstoque().getProduto().getDescricao()%></td>
-						    <td><%=p.getEstoque().getProduto().getValor()%></td>
-						    <td><%=p.getEstoque().getDataValidade().toString()%></td>
-					</tbody>
-				</table>
+	<div class="corpo-estoque">
+			<div class="corpo-content">
+				<form>
+				<label>Produto</label>
+				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getNome()%>"readonly/>
+				<br/>
+				<label>Marca</label>
+				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getMarca()%>" readonly/>
+				<br/>
+				<label>Descricao do Produto</label>
+				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getDescricao()%>" readonly/>
+				<br/>
+				<label>Valor Original</label>
+				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getProduto().getValor()%>" readonly/>
+				<br/>
+				<label>Data de Validade</label>
+				<input class="mx-sm-auto input-estoque" value="<%=p.getEstoque().getDataValidade()%>" readonly/>
+				<br/>
+				<div>
+             		<a class="btn" href="ListaProdutos.jsp">Voltar</a>
+         		</div>
+				</form>
 			</div>
 		</div>
-		 <div>
-             <a class="btn" href="ListaProdutos.jsp">Voltar</a>
-         </div>
 	</body>
 </html>

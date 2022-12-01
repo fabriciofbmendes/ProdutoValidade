@@ -3,7 +3,8 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-image:url(/img/Banner-Compras.webp)
+    background-image:url(/img/Banner-Compras.webp);
+    background-size:cover
   }
 
 *{
