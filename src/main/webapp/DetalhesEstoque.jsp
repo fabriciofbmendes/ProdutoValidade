@@ -47,7 +47,6 @@
 		PromocaoDao pd = new PromocaoDao();
 		Promocao p = pd.findById(Promocao.class, Long.parseLong(request.getParameter("id"))).get();
 		%>
-		<div class="corpo-estoque">
 			<div class="corpo-detalhe-content">
 				<div class="corpo-detalhe-content">
 							<input class="form-control input cima" type="text" value="Produto" readonly>
