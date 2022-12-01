@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap');
+
 *{
 	margin:0;
 	padding:0;
+	font-family: 'Roboto Slab', serif;
+	font-size:16px
 }
 
 table{
 	background: linear-gradient(45deg, #c87f0a, black);
 	border: 0px solid transparent !important;
     border-radius: 0px 0px 26px 26px;
-    max-width: 60rem;
+    max-width: 100%;
     text-align:center;
     margin:0 auto;
     width:80%;
@@ -17,6 +21,13 @@ table{
 
 td{
     position: sticky; top: 0;
+    padding-left:15px !important;
+    padding-right:15px !important;
+}
+
+td .button{
+	width:10px !important;
+	padding:0 !important;
 }
 
 tr:ntn-child(even){
@@ -30,20 +41,6 @@ tr:ntn-child(even){
     flex-direction: column;
 }
 
-tbody{
-    color: white;
-    border-radius: 0 0 26px 26px !important;
-    align-items: center;
-    font-size: larger;
-    letter-spacing: 2px;
-    font-weight: bold;
-    
-}
-
-body{
-    overflow: auto;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -52,6 +49,19 @@ input::-webkit-inner-spin-button {
 
 input[type=number]{
     -moz-appearance: textfield;
+}
+
+tbody{
+    color: white;
+    border-radius: 0 0 26px 26px !important;
+    align-items: center;
+    font-size: unset;
+    font-weight: bold;
+    
+}
+
+body{
+    overflow: auto;
 }
 
 th{
@@ -77,6 +87,10 @@ a{
     padding: 10px;
 }
 
+.envia{
+	left:35%;
+}
+
 .nav-link{
     letter-spacing: 2px;
 }
@@ -90,12 +104,16 @@ a:hover{
     transform: scale(1.1);
 }
 
+.detalhesbtn a{
+	margin:0
+}
 
 .corpo{
-    background-color: gray;
+    background-color: white;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/Produtos/img/produtos.webp);
+    background-image: url(img/Produtos.webp);
+    background-size:cover;
 }
