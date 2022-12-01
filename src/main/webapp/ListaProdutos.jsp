@@ -99,9 +99,12 @@
 					%>
 					<p><%=p.getEstoque().getQualidade()%></p>
 					<%} %>
-					<td class="detalhesbtn"><a class="btn btn-secondary btn-sm" href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a> </td>
+					<td class="detalhesbtn"><a class="btn btn-secondary btn-sm" href="DetalhesEstoque.jsp?id=<%=p.getId()%>">Detalhes</a>  </td>
+					<%if(p.getEstoque().getQualidade() != Qualidade.Vencido) {
+					%>
+					<td class="detalhesbtn"><a class="btn btn-secondary btn-sm" href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a></td>
+					<%} %>
 					<td class="detalhesbtn"><a class="btn btn-danger btn-sm" href="<%= request.getContextPath()%>/controllerEstoque?id=<%=p.getEstoque().getId()%>">Excluir</a></td>
-					<td class="detalhesbtn"><a class="btn btn-secondary btn-sm" href="DetalhesEstoque.jsp?id=<%=p.getId()%>">Detalhes</a> </td>
 					<%} %>
 					</td>
 					

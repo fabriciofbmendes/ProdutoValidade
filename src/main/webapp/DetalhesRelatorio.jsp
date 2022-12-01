@@ -51,6 +51,7 @@ List<Estoque> estoques = vd.GetDetalhesRelatorio(id);
             <thead class="table-dark">
                 <tr>
                     <th>Produto</th>
+                    <th>Marca</th>
                     <th>Quantidade</th>
                     <th>Nota Fiscal</th>
                     <th>Valor Perdido</th>
@@ -62,6 +63,7 @@ List<Estoque> estoques = vd.GetDetalhesRelatorio(id);
 				%>
 				<tr>
 					<td><%=e.getProduto().getNome()%></td>
+					<td><%=e.getProduto().getMarca() %></td>
 					<td><%=e.getQuantidade()%>	</td>
 					<td><%=e.getNota().getNome()%></td>
 					<td><%=(e.getProduto().getValor() * e.getQuantidade())%></td>

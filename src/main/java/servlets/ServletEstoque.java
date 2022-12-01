@@ -16,6 +16,7 @@ import Dao.EstoqueDao;
 import Dao.NotaFiscalDao;
 import Dao.ProdutoDao;
 import Dao.PromocaoDao;
+import Dao.VencimentoDao;
 import Models.Estoque;
 import Models.Produto;
 import Models.Promocao;
@@ -32,8 +33,10 @@ public class ServletEstoque extends HttpServlet{
 			throws ServletException, IOException {
 		PromocaoDao pd = new PromocaoDao();	
 		EstoqueDao ed = new EstoqueDao();
+		VencimentoDao vd = new VencimentoDao();
 		long estoqueid = Long.parseLong(request.getParameter("id"));
 		Estoque estoque = ed.findById(Estoque.class, estoqueid).get();		
+		vd.DeleteEstoqueRelatorio(estoque);
 		pd.GetPromocaoDelete(estoque);
 		response.sendRedirect("ListaProdutos.jsp");
 		
