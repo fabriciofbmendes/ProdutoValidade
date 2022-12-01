@@ -49,26 +49,25 @@
 		%>
 		<div class="corpo-estoque">
 			<div class="corpo-detalhe-content">
-				<table class="table">
-					<thead class="detalhe">
-							<td>Produto</td>
-							<td>Marca</td>
-							<td>Descrição</td>
-							<td>Valor Original</td>
-							<td>Data de Validade</td>
-
-					</thead>
-					<tbody>
-						    <td><%=p.getEstoque().getProduto().getNome()%></td>
-						    <td><%=p.getEstoque().getProduto().getMarca()%></td>
-						    <td><%=p.getEstoque().getProduto().getDescricao()%></td>
-						    <td><%=p.getEstoque().getProduto().getValor()%></td>
-						    <td><%=p.getEstoque().getDataValidade().toString()%></td>
-					</tbody>
-				</table>
+				<div class="corpo-detalhe-content">
+							<input class="form-control input cima" type="text" value="Produto" readonly>
+                            <input class="form-control input baixo" type="text" value="<%=p.getEstoque().getProduto().getNome()%>" readonly>
+                            <br>
+							<input class="form-control input cima" type="text" value="Marca" readonly>
+                            <input class="form-control input baixo" type="text" value="<%=p.getEstoque().getProduto().getMarca()%>" readonly>
+                            <br> 
+							<input class="form-control input cima" type="text" value="Descrição" readonly>
+                            <input class="form-control input baixo" type="text" value="<%=p.getEstoque().getProduto().getDescricao()%>" readonly>
+                            <br>
+                            <input class="form-control input cima" type="text" value="Valor Original" readonly>
+                            <input class="form-control input baixo" type="text" value="<%=p.getEstoque().getProduto().getValor()%>" readonly>
+                            <br>
+                            <input class="form-control input cima" type="text" value="Data de Validade" readonly>
+                            <input class="form-control input baixo" type="text" value="<%=p.getEstoque().getDataValidade().toString()%>" readonly>			    	    
+                            <br>
+				</div>
 			</div>
-		</div>
-		 <div>
+		 <div class="detalhe">
              <a class="btn" href="ListaProdutos.jsp">Voltar</a>
          </div>
 	</body>

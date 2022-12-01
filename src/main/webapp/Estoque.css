@@ -114,4 +114,43 @@ option{
     text-align:center !important;
 }
 
+.corpo-detalhe-content{
+    width: 75% !important;
+    display: inline;
+    flex-direction: row;
+    gap: 1rem;
+    position: fixed;
+    z-index: 1;
+    transform: translate(10%, -50%);   
+}
+
+.input{
+    width: 50%;
+    /* align-items: center; */
+    /* align-self: center; */
+    /* justify-content: center; */
+    margin-left: 30%;
+    border-top: none;
+    border: transparent;
+    background: linear-gradient(45deg, rgba(200, 127, 10,1), rgba(0, 0, 0, 0.5));
+}
+
+.corpo-estoque-input{
+    width: 100%;
+}
+
+.detalhe{
+    margin-right: 10% !important;
+    z-index: 1;
+}
+
+.cima{
+    border-radius: 8px 8px 0px 0px;
+}
+
+.baixo{
+    border-radius: 0px 0px 8px 8px;
+}
+
+
 
