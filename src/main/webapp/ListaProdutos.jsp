@@ -79,11 +79,14 @@
 				<%
 				for (Promocao p : promo) {
 					valor = p.getEstoque().getProduto().getValor() * (1 - p.getProcentagem());	
+					valor = valor * 100;
+					valor = Math.round(valor);
+					valor = valor/100;
 				%>
 				<tr>
 					<td><%=p.getEstoque().getProduto().getNome()%></td>
 					<td><%=p.getEstoque().getProduto().getMarca()%></td>
-					<td><%=valor%>	</td>
+					<td><%=valor%></td>
 					<td><%=p.getEstoque().getDataValidade()%></td>
 					<td><%=p.getEstoque().getQuantidade() %></td>
 					<td>
@@ -106,10 +109,15 @@
 			</tbody>
 		</table>
             <div="envia">
-                <a class="btn envia" href="Estoque.jsp">Adicionar Produto</a>
+                <a class="btn envia" href="Estoque.jsp">Adicionar Produto ao Estoque</a>
             </div>
        </div>
     </div>   
 </div> 
 </body>
+<script>
+function arredondar(n) {
+    return (Math.round(n * 100) / 100).toFixed(2);
+}
+</script>
 </html>

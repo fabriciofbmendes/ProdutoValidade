@@ -43,6 +43,7 @@
     <%
 	VencimentoDao vd = new VencimentoDao();
 	List<Vencimento> vencimentos = vd.findAll(Vencimento.class);
+	double valor = 0;
 %>
 <div class="container">
 	<form action="controllerRelatorio" method="post"> 
@@ -62,9 +63,14 @@
 			for(Vencimento v : vencimentos)
 			{
 				%>
+				<%valor = v.getValorPrejuizo();
+						valor = valor * 100;
+						valor = Math.round(valor);
+						valor = valor/100;
+				%>
 				<tr>
 					<td><%=v.getData().getMonth().toString()%></td>
-					<td><%=v.getValorPrejuizo()%></td>
+					<td><%=valor%></td>
 					<td><%=v.getQuantidade()%></td>
 					<td><a class="btn btn-secondary btn-sm" href="DetalhesRelatorio.jsp?id=<%=v.getId()%>">Detalhes</a>			<%
 			}
