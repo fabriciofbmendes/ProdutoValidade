@@ -63,7 +63,8 @@
          <table class="table table-bordered table-hover table-responsive table-borderless table-wrapper-scroll-y mb-0">
             <thead class="table-dark">
                 <tr>
-                    <th>Nome</th>
+                    <th>Produto</th>
+                    <th>Marca</th>
                     <th>Preço</th>
                     <th>Data de Validade</th>
                     <th>Quantidade Disponível</th>
@@ -80,6 +81,7 @@
 				%>
 				<tr>
 					<td><%=p.getEstoque().getProduto().getNome()%></td>
+					<td><%=p.getEstoque().getProduto().getMarca()%></td>
 					<td><%=valor%>	</td>
 					<td><%=p.getEstoque().getDataValidade()%></td>
 					<td><%=p.getEstoque().getQuantidade() %></td>

@@ -39,15 +39,18 @@
         <div class="contentadd">
             <form action="controllerProduto" method="post">
                 <input type="hidden" name="produtoid">
-                    <label>Nome do Produto</label>
+                    <label>Produto</label>
                     <input class="info" type="text" name="nome"/>
                     <br/>
+                    <label>Insira a marca do produto</label>
+                    <input class="info" type="text" name="marca"/>
+                    <br/>	
                     <label>Valor do Produto</label>
                     <input class="info" type="text" name="valor"/>
                     <br/>
                     <label>Insira a descrição do produto</label>
                     <input class="info" type="text" name="descricao"/>
-                    <br>				
+                    <br/>				
                     <input class="btn" type="submit" value="Adicionar" />
             </form>
         </div>

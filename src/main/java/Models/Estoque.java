@@ -17,7 +17,7 @@ public class Estoque {
 	public long getId() {
 		return id;
 	}
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	private Produto produto;
 	
 	@Enumerated(EnumType.STRING)

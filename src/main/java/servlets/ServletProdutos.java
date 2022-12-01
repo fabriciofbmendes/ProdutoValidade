@@ -39,6 +39,7 @@ public class ServletProdutos extends HttpServlet{
 			p.setNome(request.getParameter("nome"));
 			p.setValor(Double.parseDouble(request.getParameter("valor")));
 			p.setDescricao(request.getParameter("descricao"));
+			p.setMarca(request.getParameter("marca"));
 			pd.save(p);
 		}
 		else {
@@ -47,6 +48,7 @@ public class ServletProdutos extends HttpServlet{
 			p.setNome(request.getParameter("nome"));
 			p.setValor(Double.parseDouble(request.getParameter("valor")));
 			p.setDescricao(request.getParameter("descricao"));
+			p.setMarca(request.getParameter("marca"));
 			pd.update(p);
 		}
 		response.sendRedirect("Produtos.jsp");

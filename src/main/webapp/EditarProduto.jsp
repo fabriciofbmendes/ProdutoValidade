@@ -46,8 +46,11 @@
 		<div class="contentadd">
             <form action="controllerProduto" method="post">
 			<input type="hidden" name="produtoid" value="<%=produtoid %>">
-				<label>Nome do Produto</label>
+				<label>Produto</label>
 				<input class="info" type="text" name="nome" value="<%=produto.getNome() %>"/>
+				<br/>
+				<label>Marca do Produto</label>
+				<input class="info" type="text" name="marca" value="<%=produto.getMarca() %>"/>
 				<br/>
 				<label>Valor do Produto</label>
 				<input class="info" type="text" name="valor" value="<%=produto.getValor() %>"/>

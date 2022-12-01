@@ -54,7 +54,8 @@ ProdutoDao pd = new ProdutoDao();
         <table class="table table-bordered table-hover table-responsive table-borderless">
             <thead class="table-dark">
                 <tr>
-                    <th>Nome</th>
+                    <th>Produto</th>
+                    <th>Marca</th>
                     <th>Valor Original</th>
                     <th>Descrição</th>
                     <th></th>
@@ -67,6 +68,7 @@ ProdutoDao pd = new ProdutoDao();
 				%>
 				<tr>
 					<td><%=p.getNome()%></td>
+					<td><%=p.getMarca()%></td>
 					<td><%=p.getValor()%>	</td>
 					<td><%=p.getDescricao()%></td>
 					<td><a class="btn btn-secondary btn-sm"

@@ -23,7 +23,15 @@ public class Produto {
 	@Column(length = 200)
 	private String descricao;
 	
-
+	@Column(length = 50)
+	private String marca;
+	
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
 	public double getValor() {
 		return valor;
 	}
