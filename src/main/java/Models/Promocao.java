@@ -15,6 +15,9 @@ public class Promocao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	public long getId() {
+		return id;
+	}
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	private Estoque estoque;
 	

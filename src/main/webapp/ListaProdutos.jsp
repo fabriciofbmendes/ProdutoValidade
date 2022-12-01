@@ -95,14 +95,9 @@
 					%>
 					<p><%=p.getEstoque().getQualidade()%></p>
 					<%} %>
-					<td><a class="btn btn-secondary btn-sm"
-						href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a>
-					</td>
-					<td>	
-						<a class="btn btn-danger btn-sm"
-						href="<%= request.getContextPath()%>/controllerEstoque?id=<%=p.getEstoque().getId()%>">
-						Excluir</a>
-					</td>
+					<td><a class="btn btn-secondary btn-sm" href="EditarEstoque.jsp?id=<%=p.getEstoque().getId()%>">Editar</a> </td>
+					<td><a class="btn btn-danger btn-sm" href="<%= request.getContextPath()%>/controllerEstoque?id=<%=p.getEstoque().getId()%>">Excluir</a></td>
+					<td><a class="btn btn-secondary btn-sm" href="DetalhesEstoque.jsp?id=<%=p.getId()%>">Detalhes do Produto</a> </td>
 					<%} %>
 					</td>
 					
