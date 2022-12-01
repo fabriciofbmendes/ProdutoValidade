@@ -30,38 +30,50 @@ public class ServletVencimento extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		long id = Long.parseLong(request.getParameter("id"));
-		request.setAttribute("id", id);
-		response.sendRedirect("DetalhesRelatorio.jsp");
+		try {
+			long id = Long.parseLong(request.getParameter("id"));
+			request.setAttribute("id", id);
+			response.sendRedirect("DetalhesRelatorio.jsp");
+		}
+		catch(Exception e)
+		{
+			response.sendRedirect("RelatorioVencimento.jsp");
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DateTime dataAtual = DateTime.now();
-		int mesRelatorio = dataAtual.getMonthOfYear() - 1;
-		int anoRelatorio = dataAtual.getYear();
-		VencimentoDao vd = new VencimentoDao();
-		List<Estoque> estoques = vd.GetEstoquesRelatorio(mesRelatorio, anoRelatorio);
-		Vencimento relatorio = new Vencimento();;
-		double valor=0;
-		int quantidade=0;
-		for(Estoque e : estoques)
-		{
-			e = vd.VerificaVencimento(e);
-			if(e.getQualidade()==Qualidade.Vencido);
+		try {
+			DateTime dataAtual = DateTime.now();
+			int mesRelatorio = dataAtual.getMonthOfYear() - 1;
+			int anoRelatorio = dataAtual.getYear();
+			VencimentoDao vd = new VencimentoDao();
+			List<Estoque> estoques = vd.GetEstoquesRelatorio(mesRelatorio, anoRelatorio);
+			Vencimento relatorio = new Vencimento();;
+			double valor=0;
+			int quantidade=0;
+			for(Estoque e : estoques)
 			{
-				valor += (e.getProduto().getValor() * e.getQuantidade());
-				quantidade += e.getQuantidade();
+				e = vd.VerificaVencimento(e);
+				if(e.getQualidade()==Qualidade.Vencido);
+				{
+					valor += (e.getProduto().getValor() * e.getQuantidade());
+					quantidade += e.getQuantidade();
+				}
 			}
+			relatorio.setValorPrejuizo(valor);
+			relatorio.setData(LocalDate.of(anoRelatorio,mesRelatorio,1));
+			relatorio.setQuantidade(quantidade);
+			relatorio.setEstoque(estoques);
+			vd.save(relatorio);
+			response.sendRedirect("RelatorioVencimento.jsp");
 		}
-		relatorio.setValorPrejuizo(valor);
-		relatorio.setData(LocalDate.of(anoRelatorio,mesRelatorio,1));
-		relatorio.setQuantidade(quantidade);
-		relatorio.setEstoque(estoques);
-		vd.save(relatorio);
-		response.sendRedirect("RelatorioVencimento.jsp");
+		catch(Exception e)
+		{
+			response.sendRedirect("RelatorioVencimento.jsp");
+		}
 	}
 
 }

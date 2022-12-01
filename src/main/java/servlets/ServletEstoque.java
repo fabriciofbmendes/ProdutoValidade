@@ -31,14 +31,19 @@ public class ServletEstoque extends HttpServlet{
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PromocaoDao pd = new PromocaoDao();	
-		EstoqueDao ed = new EstoqueDao();
-		VencimentoDao vd = new VencimentoDao();
-		long estoqueid = Long.parseLong(request.getParameter("id"));
-		Estoque estoque = ed.findById(Estoque.class, estoqueid).get();		
-		vd.DeleteEstoqueRelatorio(estoque);
-		pd.GetPromocaoDelete(estoque);
-		response.sendRedirect("ListaProdutos.jsp");
+		try {
+			PromocaoDao pd = new PromocaoDao();	
+			EstoqueDao ed = new EstoqueDao();
+			VencimentoDao vd = new VencimentoDao();
+			long estoqueid = Long.parseLong(request.getParameter("id"));
+			Estoque estoque = ed.findById(Estoque.class, estoqueid).get();		
+			vd.DeleteEstoqueRelatorio(estoque);
+			pd.GetPromocaoDelete(estoque);
+			response.sendRedirect("ListaProdutos.jsp");
+		}
+		catch(Exception e) {
+			response.sendRedirect("ListaProdutos.jsp");
+		}
 		
 		}
 
@@ -63,21 +68,26 @@ public class ServletEstoque extends HttpServlet{
 				novoEstoque.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
 				novoEstoque.setNota(nfd.GerarNotaFiscal(nfd));
 				dao.save(novoEstoque);
+				response.sendRedirect("ListaProdutos.jsp");
 			}
 			catch(Exception ex)
 			{
 				response.sendRedirect("Estoque.jsp");
 			}
-			
 		}
 		else {
-			long estoqueid = Long.parseLong(request.getParameter("estoqueid"));
-			Estoque e = dao.findById(Estoque.class, estoqueid).get();
-			e.setProduto(pd.findById(Produto.class, Long.parseLong(request.getParameter("produto"))).get());
-			e.setDataValidade(LocalDate.parse(request.getParameter("dataValidade")));
-			e.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
-			dao.update(e);
+			try {
+				long estoqueid = Long.parseLong(request.getParameter("estoqueid"));
+				Estoque e = dao.findById(Estoque.class, estoqueid).get();
+				e.setProduto(pd.findById(Produto.class, Long.parseLong(request.getParameter("produto"))).get());
+				e.setDataValidade(LocalDate.parse(request.getParameter("dataValidade")));
+				e.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+				dao.update(e);
+				response.sendRedirect("ListaProdutos.jsp");
+			}
+			catch(Exception e){
+				response.sendRedirect("Estoque.jsp");
+			}
 		}
-		response.sendRedirect("ListaProdutos.jsp");
 }
 	}

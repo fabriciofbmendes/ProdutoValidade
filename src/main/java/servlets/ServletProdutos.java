@@ -18,14 +18,18 @@ public class ServletProdutos extends HttpServlet{
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		ProdutoDao dao = new ProdutoDao();
-		
-		long produtoid = Long.parseLong(request.getParameter("id"));
-		Produto produto = dao.findById(Produto.class, produtoid).get();
-		dao.delete(produto);
-		response.sendRedirect("Produtos.jsp");
+		try {
+			ProdutoDao dao = new ProdutoDao();
+			long produtoid = Long.parseLong(request.getParameter("id"));
+			Produto produto = dao.findById(Produto.class, produtoid).get();
+			dao.delete(produto);
+			response.sendRedirect("Produtos.jsp");
 		}
+		catch(Exception e)
+		{
+			response.sendRedirect("Produtos.jsp");
+		}
+}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -35,23 +39,34 @@ public class ServletProdutos extends HttpServlet{
 			throws ServletException, IOException {
 		ProdutoDao pd = new ProdutoDao();
 		if (request.getParameter("produtoid").equals("")) {
-			Produto p = new Produto();
-			p.setNome(request.getParameter("nome"));
-			p.setValor(Double.parseDouble(request.getParameter("valor")));
-			p.setDescricao(request.getParameter("descricao"));
-			p.setMarca(request.getParameter("marca"));
-			pd.save(p);
+			try {
+				Produto p = new Produto();
+				p.setNome(request.getParameter("nome"));
+				p.setValor(Double.parseDouble(request.getParameter("valor")));
+				p.setDescricao(request.getParameter("descricao"));
+				p.setMarca(request.getParameter("marca"));
+				pd.save(p);
+				response.sendRedirect("Produtos.jsp");
+			}
+			catch(Exception e)
+			{
+				response.sendRedirect("AdicionaProduto.jsp");
+			}
 		}
 		else {
-			long produtoid = Long.parseLong(request.getParameter("produtoid"));
-			Produto p = pd.findById(Produto.class, produtoid).get();
-			p.setNome(request.getParameter("nome"));
-			p.setValor(Double.parseDouble(request.getParameter("valor")));
-			p.setDescricao(request.getParameter("descricao"));
-			p.setMarca(request.getParameter("marca"));
-			pd.update(p);
+			try {
+				long produtoid = Long.parseLong(request.getParameter("produtoid"));
+				Produto p = pd.findById(Produto.class, produtoid).get();
+				p.setNome(request.getParameter("nome"));
+				p.setValor(Double.parseDouble(request.getParameter("valor")));
+				p.setDescricao(request.getParameter("descricao"));
+				p.setMarca(request.getParameter("marca"));
+				pd.update(p);
+				response.sendRedirect("Produtos.jsp");
+			}
+			catch(Exception e) {
+				response.sendRedirect("EditarProduto");
+			}
 		}
-		response.sendRedirect("Produtos.jsp");
-
 }
 	}
