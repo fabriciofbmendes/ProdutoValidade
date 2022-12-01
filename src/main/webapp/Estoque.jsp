@@ -58,7 +58,7 @@
 							<%for(Produto p : produtos)
 							{
 								%>
-								<option value="<%=p.getId()%>"><%=p.getNome()%></option>
+								<option value="<%=p.getId()%>"><%=p.getNome()%> - <%=p.getMarca() %></option>
 								<%
 							}	
 							%>

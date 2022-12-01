@@ -49,7 +49,7 @@
                     <input class="info" type="number" required name="valor"/>
                     <br/>
                     <label>Insira a descrição do produto</label>
-                    <input class="info" type="text" required name="descricao"/>
+                    <textarea class="info" required name="descricao"></textarea>
                     <br/>				
                     <input class="btn" type="submit" value="Adicionar" />
             </form>
