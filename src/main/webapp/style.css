@@ -41,6 +41,16 @@ tr:ntn-child(even){
     flex-direction: column;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
 tbody{
     color: white;
     border-radius: 0 0 26px 26px !important;

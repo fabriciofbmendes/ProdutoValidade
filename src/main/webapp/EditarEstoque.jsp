@@ -71,10 +71,10 @@
 				</select>
 				<br/>
 				<label>Insira a quantidade de prodotos no lote</label>
-				<input class="info" type="text" name="quantidade" value="<%=estoque.getQuantidade()%>"/>
+				<input class="info" type="number" required name="quantidade" value="<%=estoque.getQuantidade()%>"/>
 				<br/>
 				<label>Insira a data de validade do Lote</label>
-				<input class="info" type="date" name="dataValidade" value="<%=estoque.getDataValidade()%>"/>
+				<input class="info" type="date" required name="dataValidade" value="<%=estoque.getDataValidade()%>"/>
 				
 				<input class="btn" type="submit" value="Salvar" />
 		</form>

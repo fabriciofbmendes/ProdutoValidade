@@ -5,6 +5,16 @@ body {
     flex-direction: column;
     background-image:url(/img/Banner-Compras.webp)
   }
+  
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
 
 *{
     margin: 0;

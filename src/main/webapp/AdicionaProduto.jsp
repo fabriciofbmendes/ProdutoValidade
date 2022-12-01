@@ -40,16 +40,16 @@
             <form action="controllerProduto" method="post">
                 <input type="hidden" name="produtoid">
                     <label>Produto</label>
-                    <input class="info" type="text" name="nome"/>
+                    <input class="info" type="text" required name="nome"/>
                     <br/>
                     <label>Insira a marca do produto</label>
-                    <input class="info" type="text" name="marca"/>
+                    <input class="info" type="text" required name="marca"/>
                     <br/>	
                     <label>Valor do Produto</label>
-                    <input class="info" type="text" name="valor"/>
+                    <input class="info" type="number" required name="valor"/>
                     <br/>
                     <label>Insira a descrição do produto</label>
-                    <input class="info" type="text" name="descricao"/>
+                    <input class="info" type="text" required name="descricao"/>
                     <br/>				
                     <input class="btn" type="submit" value="Adicionar" />
             </form>

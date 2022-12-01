@@ -65,10 +65,10 @@
 						</select>
 						<br/>
 						<label>Insira a quantidade de prodotos no lote</label>
-						<input class="mx-sm-auto input-estoque" type="text" name="quantidade"/>
+						<input class="mx-sm-auto input-estoque" type="number" required name="quantidade"/>
 						<br/>	
 						<label>Insira a data de validade do Lote</label>
-						<input class="mx-sm-auto input-estoque" type="date" name="dataValidade"/>
+						<input class="mx-sm-auto input-estoque" type="date" required name="dataValidade"/>
 						
 						<input class="btn input-estoque" type="submit" value="Adicionar Lote" />
 				</form>

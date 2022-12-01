@@ -47,16 +47,16 @@
             <form action="controllerProduto" method="post">
 			<input type="hidden" name="produtoid" value="<%=produtoid %>">
 				<label>Produto</label>
-				<input class="info" type="text" name="nome" value="<%=produto.getNome() %>"/>
+				<input class="info" type="text" required name="nome" value="<%=produto.getNome() %>"/>
 				<br/>
 				<label>Marca do Produto</label>
-				<input class="info" type="text" name="marca" value="<%=produto.getMarca() %>"/>
+				<input class="info" type="text" required name="marca" value="<%=produto.getMarca() %>"/>
 				<br/>
 				<label>Valor do Produto</label>
-				<input class="info" type="text" name="valor" value="<%=produto.getValor() %>"/>
+				<input class="info" type="number" required name="valor" value="<%=produto.getValor() %>"/>
 				<br/>
 				<label>Insira a descrição do produto</label>
-				<input class="info" type="text" name="descricao" value="<%=produto.getDescricao()%>"/>	
+				<input class="info" type="text" required name="descricao" value="<%=produto.getDescricao()%>"/>	
 				<br/>			
 				<input class="btn" type="submit" value="Editar Produto" />
             </form>
