@@ -16,7 +16,7 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="webapp/css/styles.css" rel="stylesheet" />
+        <link href="./css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -26,9 +26,9 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">Lista Produtos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#about">Estoque</a></li>
-						<li class="nav-item"><a class="nav-link" href="#about">Relatótios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Produtos.jsp">Lista Produtos</a></li>
+						<li class="nav-item"><a class="nav-link" href="ListaProdutos.jsp">Estoque</a></li>
+						<li class="nav-item"><a class="nav-link" href="RelatorioVencimento.jsp">Relatótios</a></li>
 						<li class="nav-item"><a class="nav-link" href="#about">Projeto</a></li>
                         
                     </ul>
@@ -59,7 +59,7 @@
                         <hr class="divider divider-light" />
                         <p class="text-white-75 mb-4">Este projeto foi planejado como um validador de produtos, onde conta com a opção de uma tabela para a visualização desses produtos, contendo Nome, Preço, Data de Validade, Quantidade Disponível e Produto Ativo. Adicionando um produto teremos uma célula para selecionar qual produto você deseja adicionar ao lote, Inserir a quantidade desse mesmo produto e a data de validade.
 						Com o objetivo de fazer um controle melhor dos produtos que estão em estoque, juntamente com sua quantidade disponível e sua data de validade. </p>
-                        <a class="btn btn-light btn-xl" href="#services">Estoque</a>
+                        <a class="btn btn-light btn-xl" href="ListaProdutos.jsp">Estoque</a>
                     </div>
                 </div>
             </div>
