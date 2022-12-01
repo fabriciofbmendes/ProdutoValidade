@@ -60,11 +60,11 @@
 						if(p.getId()==estoque.getProduto().getId())
 						{
 						%>
-						<option value="<%=p.getId()%>" selected="selected"><%=p.getNome()%></option>
+						<option value="<%=p.getId()%>" selected="selected"><%=p.getNome()%> - <%=p.getMarca() %></option>
 						<%}
 						else
 						%>
-						<option value="<%=p.getId()%>"><%=p.getNome()%></option>
+						<option value="<%=p.getId()%>"><%=p.getNome()%> - <%=p.getMarca() %></option>
 						<%
 					}	
 					%>
